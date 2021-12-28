@@ -15,34 +15,38 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &kp ESC   &kp DE_Q &kp DE_W &kp DE_F &kp DE_P &kp DE_B   &kp DE_J &kp DE_L &kp DE_U    &kp DE_Y   &kp DE_SS    &kp DE_PLUS
-   &kp LCTRL &kp DE_A &kp DE_R &kp DE_S &kp DE_T &kp DE_G   &kp DE_M &kp DE_N &kp DE_E    &kp DE_I   &kp DE_O     &kp DE_HASH
-   &kp LSHFT &kp DE_Z &kp DE_X &kp DE_C &kp DE_D &kp DE_V   &kp DE_K &kp DE_H &kp DE_COMM &kp DE_DOT &kp FSLH     &kp DE_R
-                      &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+   &kp ESC   &kp DE_Q &kp DE_W   &kp DE_F   &kp DE_P   &kp DE_B          &kp DE_J      &kp DE_L  &kp DE_U    &kp DE_Y   &kp DE_SS    &kp DE_PLUS
+   &kp LCTRL &kp DE_A &kp DE_R   &kp DE_S   &kp DE_T   &kp DE_G          &kp DE_M      &kp DE_N  &kp DE_E    &kp DE_I   &kp DE_O     &kp DE_HASH
+   &kp LSHFT &kp DE_Z &kp DE_X   &kp DE_C   &kp DE_D   &kp DE_V          &kp DE_K      &kp DE_H  &kp DE_COMM &kp DE_DOT &kp FSLH     &kp DE_R
+                                 &kp BSPC   &mo 1      &kp SPACE         &kp SPACE     &mo 2     &kp RET
                         >;
                 };
 
                 lower_layer {
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &kp TAB     &kp DE_EXLM  &kp DE_DQUO  &kp DE_DLR   &kp DE_AMPR  &kp DE_PERC    &trans   &kp DE_LPRN   &kp DE_RPRN     &kp DE_MINS &kp DE_EQL   &kp DE_BSLS  
+   &kp DE_PIPE &kp DE_AT    &kp DE_TILD  &kp DE_EURO  &trans       &trans         &trans   &kp DE_LCBR   &kp DE_RCBR     &kp DE_LBRC &kp DE_RBRC  &kp DE_QUOT
+   &kp LSHFT   &trans       &trans       &trans       &trans       &trans         &trans   &kp DE_LABK   &kp DE_RABK     &trans      &trans       &trans
+                          	         &trans       &trans       &trans         &trans   &mo 3        &trans  
                         >;
                 };
 
                 raise_layer {
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &trans     &kp N1   &kp N2  &kp N3   &kp N4   &kp N5      &kp N6    &kp N7   &kp N8     &kp N9    &kp N0     &kp BSPC
+   &kp LCTRL  &trans   &trans  &trans   &trans   &trans      &kp MINUS &kp LEFT &kp DOWN   &kp UP    &kp RIGHT  &kp GRAVE
+   &kp LSHFT  &trans   &trans  &trans   &trans   &trans      &kp UNDER &kp PLUS &kp LBRC   &kp RBRC  &kp PIPE   &kp TILDE
+                               &trans   &mo 3    &trans      &trans    &trans   &trans
+                        >;
+                };
+
+                adjust_layer {
+                        bindings = <
+   &trans  &trans   &trans  &trans   &trans   &trans      &kp C_BRI_UP &kp K_VOL_UP &trans &trans  &trans  &trans
+   &trans  &trans   &trans  &trans   &trans   &trans      &kp C_BRI_DN &kp K_VOL_DN &trans &trans  &trans  &trans
+   &trans  &trans   &trans  &trans   &trans   &trans      &trans       &trans       &trans &trans  &trans  &trans
+                            &trans   &trans   &trans      &trans       &trans       &trans
                         >;
                 };
         };
