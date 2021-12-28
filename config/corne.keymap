@@ -63,10 +63,10 @@
 
                 adjust_layer {
                         bindings = <
-   &out OUT_BLE &bt BT0      &bt BT3   &none    &none    &none       &kp C_BRI_UP &kp K_VOL_UP &none  &none   &none   &none 
-   &out OUT_USB &bt BT1      &bt BT4   &none    &none    &none       &kp C_BRI_DN &kp K_VOL_DN &none  &none   &none   &none 
-   &bt  BT_CLR  &bt BT2      &none   &none    &none    &none       &none        &none        &none  &none   &none   &none 
-                                     &none    &trans   &none       &none        &trans       &trans
+   &out OUT_BLE &bt BT0      &bt BT3 &none    &none    &none       &kp C_BRI_UP &kp K_VOLUME_UP2   &kp C_VOLUME_UP    &none   &none   &none 
+   &out OUT_USB &bt BT1      &bt BT4 &none    &none    &none       &kp C_BRI_DN &kp K_VOLUME_DOWN2 &kp C_VOLUME_DOWN  &none   &none   &none 
+   &bt  BT_CLR  &bt BT2      &none   &none    &none    &none       &none        &none              &none              &none   &none   &none 
+                                     &none    &trans   &none       &none        &trans             &trans
                         >;
                 };
         };
