@@ -17,6 +17,15 @@
 #define ADJUST  3
 
 / {
+        conditional_layers {
+                compatible = "zmk,conditional-layers";
+                        tri_layer {
+                                if-layers = <LOWER RAISE>;
+                                then-layer = <ADJUST>;
+                        };
+                };
+        };
+        
         keymap {
                 compatible = "zmk,keymap";
 
@@ -34,7 +43,7 @@
    &kp TAB     &kp DE_EXLM  &kp DE_DQUO  &kp DE_DLR   &kp DE_AMPR  &kp DE_PERC    &none    &kp DE_LPRN   &kp DE_RPRN     &kp DE_MINS &kp DE_EQL   &kp DE_BSLS  
    &kp DE_PIPE &kp DE_AT    &kp DE_TILD  &kp DE_EURO  &none        &none          &none    &kp DE_LCBR   &kp DE_RCBR     &kp DE_LBRC &kp DE_RBRC  &kp DE_QUOT
    &kp LSHFT   &none        &none        &none        &none        &none          &none    &kp DE_LABK   &kp DE_RABK     &none       &none        &none
-                          	         &none        &trans       &none          &none    &mo ADJUST    &none   
+                          	         &none        &trans       &none          &none     &trans    &none   
                         >;
                 };
 
@@ -43,7 +52,7 @@
    &none      &kp N1   &kp N2  &kp N3   &kp N4      &kp N5      &kp N6    &kp N7   &kp N8     &kp N9    &kp N0     &kp BSPC
    &kp LCTRL  &none    &none   &none    &none       &none       &kp MINUS &kp LEFT &kp DOWN   &kp UP    &kp RIGHT  &kp GRAVE
    &kp LSHFT  &none    &none   &none    &none       &none       &kp UNDER &kp PLUS &kp LBRC   &kp RBRC  &kp PIPE   &kp TILDE
-                               &none    &mo ADJUST  &none       &none     &trans    &trans 
+                               &none    &trans  &none       &none     &trans    &trans 
                         >;
                 };
 

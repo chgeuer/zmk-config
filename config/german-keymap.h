@@ -1,4 +1,4 @@
-// Source: https://raw.githubusercontent.com/schmjop/zmk-config/master/config/german-keymap.h
+// Source: https://github.com/schmjop/zmk-config/blob/master/config/german-keymap.h
 
 #define DE_A        A                  // A
 #define DE_B        B                  // B
