@@ -23,6 +23,49 @@
 
 
 / {
+
+keymap {
+compatible = "zmk,keymap";
+    layer_0 {
+       bindings = <
+         &kp ESC          &kp DE_Q          &kp DE_W          &kp DE_F           &kp DE_P            &kp DE_B                        &kp DE_J        &kp DE_L                  &kp DE_U                     &kp DE_Y                     &kp DE_SS              &kp DE_PLUS
+         &kp TAB          &kb DE_A          &kp DE_R          &kp DE_S           &kp DE_T            &kp DE_G                        &kp DE_M        &kp DE_N                  &kp DE_E                     &kp DE_I                     &kp DE_O               &kp DE_HASH
+         &none            &kp DE_Z          &kp DE_X          &kp DE_C           &kp DE_D            &kp DE_V                        &kp DE_K        &kp DE_H                  &kp DE_COMM                  &kp DE_DOT                   &kp DE_MINS            &none
+                                                              &kp BSPC           &kp SPACE           &none                           &to 1           &kp RET                   &none
+       >;
+    };
+    layer_1 {
+       bindings = <
+         &kp DE_CIRC      &kp DE_EXLM       &kp DE_DQUO       &kp DE_DLR         &kp DE_AMPR         &kp DE_PERC                     &none           &kp DE_LPRN               &kp DE_RPRN                  &kp DE_MINS                  &kp DE_EQL             &kp DE_BSLS  
+         &kp DE_PIPE      &kp DE_AT         &kp DE_TILD       &kp DE_EURO        &none               &none                           &none           &kp DE_LCBR               &kp DE_RCBR                  &kp DE_LBRC                  &kp DE_RBRC            &kp DE_QUOT
+         &none            &none             &none             &none              &none               &none                           &none           &kp DE_LABK               &kp DE_RABK                  &none                        &none                  &kp DE_GRV
+                                                              &trans             &to 3               &to 0                           &to 2           &trans                    &trans
+       >;
+    };
+    layer_2 {
+       bindings = <
+         &kp HOME         &kp N1            &kp N2            &kp N3             &kp N4              &kp N5                          &kp N6          &kp N7                    &kp N8                       &kp N9                       &kp N0                 &kp PG_UP
+         &kp END          &kp F1            &kp F2            &kp F3             &kp F4              &kp F5                          &kp F6          &kp LEFT                  &kp DOWN                     &kp UP                       &kp RIGHT              &kp PG_DN
+         &none            &kp F7            &kp F8            &kp F9             &kp F10             &kp F11                         &kp F12         &kp PLUS                  &kp LBRC                     &kp RBRC                     &kp PIPE               &none
+                                                              &trans             &trans              &to 0                           &trans          &trans                    &trans
+       >;
+    };
+    layer_3 {
+       bindings = <
+         &out OUT_BLE     &bt BT0           &bt BT3           &none              &none               &none                           &none           &kp C_VOLUME_UP           &kp C_PREVIOUS               &kp C_NEXT                   &none                  &none 
+         &out OUT_USB     &bt BT1           &bt BT4           &none              &none               &none                           &none           &kp C_VOLUME_DOWN         &kp C_PLAY_PAUSE             &none                        &none                  &none 
+         &kp LEFT_SHIFT   &bt BT2           &bt BT_CLR        &none              &none               &none                           &none           &kp DE_AE                 &kp DE_OE                    &kp DE_UE                    &kp DE_SS              &none 
+                                                              &trans             &trans              &to 0                           &trans          &trans                    &trans
+        >;
+    };
+  };
+
+};
+
+
+
+
+/*
         conditional_layers {
                 compatible = "zmk,conditional-layers";
                 adj_layer {
@@ -31,43 +74,40 @@
                 };
         };
 
+
         keymap {
                 compatible = "zmk,keymap";
-
-                default_layer {
-                        bindings = <
-   &kp ESC   &kp DE_Q      &kp DE_W        &kp DE_F       &kp DE_P          &kp DE_B             &kp DE_J   &kp DE_L          &kp DE_U        &kp DE_Y        &kp DE_SS      &kp DE_PLUS
-   &kp TAB   &mt LGUI DE_A &mt LALT DE_R   &mt LCTRL DE_S &mt LSHIFT DE_T   &kp DE_G             &kp DE_M   &mt RSHIFT DE_N   &mt RCTRL DE_E  &mt RALT DE_I   &mt RGUI DE_O  &kp DE_HASH
-   &none     &kp DE_Z      &kp DE_X        &kp DE_C       &kp DE_D          &kp DE_V             &kp DE_K   &kp DE_H          &kp DE_COMM     &kp DE_DOT      &kp DE_MINS       &none
-                                           &kp BSPC       &mo LOWER         &mo LOWER            &mo RAISE  &lt RAISE SPACE   &lt RAISE RET
-                        >;
-                };
-
-                lower_layer {
-                        bindings = <
-   &kp DE_CIRC &kp DE_EXLM  &kp DE_DQUO  &kp DE_DLR   &kp DE_AMPR  &kp DE_PERC    &none    &kp DE_LPRN   &kp DE_RPRN     &kp DE_MINS &kp DE_EQL   &kp DE_BSLS  
-   &kp DE_PIPE &kp DE_AT    &kp DE_TILD  &kp DE_EURO  &none        &none          &none    &kp DE_LCBR   &kp DE_RCBR     &kp DE_LBRC &kp DE_RBRC  &kp DE_QUOT
-   &none       &none        &none        &none        &none        &none          &none    &kp DE_LABK   &kp DE_RABK     &none       &none        &kp DE_GRV
-                          	         &trans       &trans       &trans         &trans   &trans        &trans
-                        >;
-                };
-
-                raise_layer {
-                        bindings = <
-   &kp HOME   &kp N1   &kp N2  &kp N3   &kp N4      &kp N5                   &kp N6    &kp N7    &kp N8     &kp N9    &kp N0     &kp PG_UP
-   &kp END    &kp F1   &kp F2  &kp F3   &kp F4      &kp F5                   &kp F6    &kp LEFT  &kp DOWN   &kp UP    &kp RIGHT  &kp PG_DN
-   &none      &kp F7   &kp F8  &kp F9   &kp F10     &kp F11                  &kp F12   &kp PLUS  &kp LBRC   &kp RBRC  &kp PIPE   &none
-                               &trans   &trans      &trans                   &trans    &trans    &trans
-                        >;
-                };
-
-                adjust_layer {
-                        bindings = <
-   &out OUT_BLE     &bt BT0      &bt BT3       &none    &none    &none              &none   &kp C_VOLUME_UP    &kp C_PREVIOUS     &kp C_NEXT   &none      &none 
-   &out OUT_USB     &bt BT1      &bt BT4       &none    &none    &none              &none   &kp C_VOLUME_DOWN  &kp C_PLAY_PAUSE   &none        &none      &none 
-   &kp LEFT_SHIFT   &bt BT2      &bt BT_CLR    &none    &none    &none              &none   &kp DE_AE          &kp DE_OE          &kp DE_UE    &kp DE_SS  &none 
-                                               &trans   &trans   &trans             &trans  &trans             &trans
-                        >;
-                };
-        };
-};
+    default_layer {
+       bindings = <
+         &kp ESC          &kp DE_Q          &kp DE_W          &kp DE_F           &kp DE_P            &kp DE_B                        &kp DE_J        &kp DE_L                  &kp DE_U                     &kp DE_Y                     &kp DE_SS              &kp DE_PLUS
+         &kp TAB          &mt LGUI DE_A     &mt LALT DE_R     &mt LCTRL DE_S     &mt LSHIFT DE_T     &kp DE_G                        &kp DE_M        &mt RSHIFT DE_N           &mt RCTRL DE_E               &mt RALT DE_I                &mt RGUI DE_O          &kp DE_HASH
+         &none            &kp DE_Z          &kp DE_X          &kp DE_C           &kp DE_D            &kp DE_V                        &kp DE_K        &kp DE_H                  &kp DE_COMM                  &kp DE_DOT                   &kp DE_MINS            &none
+                                                              &kp BSPC           &mo LOWER           &mo LOWER                       &mo RAISE       &lt RAISE SPACE           &lt RAISE RET
+       >;
+    };
+    lower_layer {
+       bindings = <
+         &kp DE_CIRC      &kp DE_EXLM       &kp DE_DQUO       &kp DE_DLR         &kp DE_AMPR         &kp DE_PERC                     &none           &kp DE_LPRN               &kp DE_RPRN                  &kp DE_MINS                  &kp DE_EQL             &kp DE_BSLS  
+         &kp DE_PIPE      &kp DE_AT         &kp DE_TILD       &kp DE_EURO        &none               &none                           &none           &kp DE_LCBR               &kp DE_RCBR                  &kp DE_LBRC                  &kp DE_RBRC            &kp DE_QUOT
+         &none            &none             &none             &none              &none               &none                           &none           &kp DE_LABK               &kp DE_RABK                  &none                        &none                  &kp DE_GRV
+                                                              &trans             &trans              &trans                          &trans          &trans                    &trans
+       >;
+    };
+    raise_layer {
+       bindings = <
+         &kp HOME         &kp N1            &kp N2            &kp N3             &kp N4              &kp N5                          &kp N6          &kp N7                    &kp N8                       &kp N9                       &kp N0                 &kp PG_UP
+         &kp END          &kp F1            &kp F2            &kp F3             &kp F4              &kp F5                          &kp F6          &kp LEFT                  &kp DOWN                     &kp UP                       &kp RIGHT              &kp PG_DN
+         &none            &kp F7            &kp F8            &kp F9             &kp F10             &kp F11                         &kp F12         &kp PLUS                  &kp LBRC                     &kp RBRC                     &kp PIPE               &none
+                                                              &trans             &trans              &trans                          &trans          &trans                    &trans
+       >;
+    };
+    adjust_layer {
+       bindings = <
+         &out OUT_BLE     &bt BT0           &bt BT3           &none              &none               &none                           &none           &kp C_VOLUME_UP           &kp C_PREVIOUS               &kp C_NEXT                   &none                  &none 
+         &out OUT_USB     &bt BT1           &bt BT4           &none              &none               &none                           &none           &kp C_VOLUME_DOWN         &kp C_PLAY_PAUSE             &none                        &none                  &none 
+         &kp LEFT_SHIFT   &bt BT2           &bt BT_CLR        &none              &none               &none                           &none           &kp DE_AE                 &kp DE_OE                    &kp DE_UE                    &kp DE_SS              &none 
+                                                              &trans             &trans              &trans                          &trans          &trans                    &trans
+        >;
+    };
+  };
+*/
