@@ -39,7 +39,7 @@
    &kp ESC   &kp DE_Q      &kp DE_W        &kp DE_F       &kp DE_P          &kp DE_B             &kp DE_J   &kp DE_L          &kp DE_U        &kp DE_Y        &kp DE_SS      &kp DE_PLUS
    &kp TAB   &mt LGUI DE_A &mt LALT DE_R   &mt LCTRL DE_S &mt LSHIFT DE_T   &kp DE_G             &kp DE_M   &mt RSHIFT DE_N   &mt RCTRL DE_E  &mt RALT DE_I   &mt RGUI DE_O  &kp DE_HASH
    &none     &kp DE_Z      &kp DE_X        &kp DE_C       &kp DE_D          &kp DE_V             &kp DE_K   &kp DE_H          &kp DE_COMM     &kp DE_DOT      &kp DE_MINS       &none
-                                           &kp BSPC       &mo LOWER         &mo LOWER            &mo RAISE  &kp SPACE         &lt RAISE RET
+                                           &kp BSPC       &mo LOWER         &mo LOWER            &mo RAISE  &lt RAISE SPACE   &lt RAISE RET
                         >;
                 };
 
