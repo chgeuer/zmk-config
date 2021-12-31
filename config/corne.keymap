@@ -44,24 +44,24 @@
         // https://zmk.dev/docs/behaviors/hold-tap
         behaviors {
                 lh_pht: left_hand_positional_hold_tap {
-                    compatible = "zmk,behavior-hold-tap";
-                    label = "POSITIONAL_HOLD_TAP_LEFT";
-                    #binding-cells = <2>;
-                    flavor = "tap-unless-interrupted";
-                    tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-                    quick-tap-ms = <200>;
-                    bindings = <&kp>, <&kp>;
-                    hold-trigger-key-positions = <RIGT_ROWS_012>;
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "HOMEROW_MODS";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <0>;
+                        flavor = "balanced";
+                        bindings = <&kp>, <&kp>;
+                        hold-trigger-key-positions = <RIGT_ROWS_012>;
                 };
                 rh_pht: right_hand_positional_hold_tap {
-                    compatible = "zmk,behavior-hold-tap";
-                    label = "POSITIONAL_HOLD_TAP_RIGHT";
-                    #binding-cells = <2>;
-                    flavor = "tap-unless-interrupted";
-                    tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-                    quick-tap-ms = <200>;
-                    bindings = <&kp>, <&kp>;
-                    hold-trigger-key-positions = <LEFT_ROWS_012>;
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "HOMEROW_MODS2";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <200>; 
+                        quick-tap-ms = <0>;
+                        flavor = "balanced";
+                        bindings = <&kp>, <&kp>;
+                        hold-trigger-key-positions = <LEFT_ROWS_012>;
                 };
             };
 
