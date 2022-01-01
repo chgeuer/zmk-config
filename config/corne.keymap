@@ -43,16 +43,10 @@
 
         combos {
                 compatible = "zmk,combos";
-                combo_de_ae {
-                        timeout-ms = <50>;
-                        key-positions = <6 7>;
-                        bindings = <&kp DE_AE>;
-                };
-                combo_de_oe {
-                        timeout-ms = <50>;
-                        key-positions = <18 19>;
-                        bindings = <&kp DE_OE>;
-                };
+                combo_de_ae { timeout-ms = <50>; key-positions = < 6  7>; bindings = <&kp DE_AE>; };
+                combo_de_oe { timeout-ms = <50>; key-positions = <18 19>; bindings = <&kp DE_OE>; };
+                combo_de_ue { timeout-ms = <50>; key-positions = <18 19>; bindings = <&kp DE_UE>; };
+                combo_de_ss { timeout-ms = <50>; key-positions = < 7  8>; bindings = <&kp DE_SS>; };
         };
 
         // https://zmk.dev/docs/behaviors/hold-tap
@@ -61,7 +55,7 @@
                         compatible = "zmk,behavior-hold-tap";
                         label = "POSITIONAL_HOLD_TAP";
                         #binding-cells = <2>;
-                        flavor = "tap-unless-interrupted";
+                        flavor = "balanced";
                         tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
                         quick-tap-ms = <0>;
                         bindings = <&kp>, <&kp>;
@@ -71,7 +65,7 @@
                         compatible = "zmk,behavior-hold-tap";
                         label = "POSITIONAL_HOLD_TAPR";
                         #binding-cells = <2>;
-                        flavor = "tap-unless-interrupted";
+                        flavor = "balanced";
                         tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
                         quick-tap-ms = <0>;
                         bindings = <&kp>, <&kp>;
