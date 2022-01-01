@@ -47,6 +47,10 @@
                 combo_de_oe { timeout-ms = <50>; key-positions = <18 19>; bindings = <&kp DE_OE>; };
                 combo_de_ue { timeout-ms = <50>; key-positions = <30 31>; bindings = <&kp DE_UE>; };
                 combo_de_ss { timeout-ms = <50>; key-positions = < 7  8>; bindings = <&kp DE_SS>; };
+
+                combo_layer_1 { timeout-ms = <50>; key-positions = < 4  5>; bindings = <&to 1>; };
+                combo_layer_2 { timeout-ms = <50>; key-positions = <16 17>; bindings = <&to 2>; };
+                combo_layer_3 { timeout-ms = <50>; key-positions = <28 29>; bindings = <&to 3>; };
         };
 
         // https://zmk.dev/docs/behaviors/hold-tap
