@@ -41,6 +41,15 @@
                 };
         };
 
+        combos {
+                compatible = "zmk,combos";
+                combo_esc {
+                        timeout-ms = <50>;
+                        key-positions = <1 2>;
+                        bindings = <&kp RET>;
+                };
+        };
+
         // https://zmk.dev/docs/behaviors/hold-tap
         behaviors {
                 lh_pht: left_hand_positional_hold_tap {
