@@ -33,14 +33,6 @@
 #define RIGT_ROWS_012   RIGT_ROW_0 RIGT_ROW_1 RIGT_ROW_2
 
 / {
-        conditional_layers {
-                compatible = "zmk,conditional-layers";
-                adj_layer {
-                        if-layers =  <LOWER RAISE>;
-                        then-layer = <ADJUST>;
-                };
-        };
-
         combos {
                 compatible = "zmk,combos";
                 combo_de_ae { timeout-ms = <50>; key-positions = < 6  7>; bindings = <&kp DE_AE>; };
@@ -111,7 +103,7 @@
    &out OUT_BLE     &bt BT0      &bt BT3       &none    &none    &none              &none   &kp C_VOLUME_UP    &kp C_PREVIOUS     &kp C_NEXT   &none      &none 
    &out OUT_USB     &bt BT1      &bt BT4       &none    &none    &none              &none   &kp C_VOLUME_DOWN  &kp C_PLAY_PAUSE   &none        &none      &none 
    &kp LEFT_SHIFT   &bt BT2      &bt BT_CLR    &none    &none    &none              &none   &kp DE_AE          &kp DE_OE          &kp DE_UE    &kp DE_SS  &none 
-                                               &trans   &trans   &trans             &to 0  &trans             &trans
+                                               &trans   &trans   &trans             &to 0   &trans             &trans
                         >;
                 };
         };
