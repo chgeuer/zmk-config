@@ -91,10 +91,10 @@
 
                 layer_2 {
                         bindings = <
-   &kp HOME    &kp N1   &kp N2  &kp N3   &kp N4      &kp N5                   &kp N6    &kp N7        &kp N8              &kp N9  &kp N0             &kp PG_UP
-   &kp END     &kp F1   &kp F2  &kp F3   &kp F4      &kp F5                   &kp F6    &rh_pht LEFT  &rh_pht RCTRL DOWN  &kp UP  &rh_pht RALT RIGHT &kp PG_DN
-   &kp LSHIFT  &kp F7   &kp F8  &kp F9   &kp F10     &kp F11                  &kp F12   &none         &none               &none   &none              &none
-                                &trans   &trans      &trans                   &to 0     &trans        &trans
+   &kp HOME    &kp N1   &kp N2  &kp N3   &kp N4      &kp N5                   &kp N6    &kp N7               &kp N8              &kp N9  &kp N0             &kp PG_UP
+   &kp END     &kp F1   &kp F2  &kp F3   &kp F4      &kp F5                   &kp F6    &rh_pht RSHIFT LEFT  &rh_pht RCTRL DOWN  &kp UP  &rh_pht RALT RIGHT &kp PG_DN
+   &kp LSHIFT  &kp F7   &kp F8  &kp F9   &kp F10     &kp F11                  &kp F12   &none                &none               &none   &none              &none
+                                &trans   &trans      &trans                   &to 0     &trans               &trans
                         >;
                 };
 
