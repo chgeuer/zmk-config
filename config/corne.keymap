@@ -74,7 +74,7 @@
                 default_layer {
                         bindings = <
    &kp ESC   &kp DE_Q          &kp DE_W          &kp DE_F             &kp DE_P             &kp DE_B             &kp DE_J      &kp DE_L              &kp DE_U               &kp DE_Y          &kp DE_SS         &kp DE_PLUS
-   &kp TAB   &lh_pht LALT DE_A &lh_pht LGUI DE_R &lh_pht LCTRL DE_S   &lh_pht LSHIFT DE_T  &kp DE_G             &kp DE_M      &rh_pht RSHIFT DE_N   &rh_pht RCTRL DE_E     &rh_pht RGUI DE_I &rh_pht RALT DE_O &kp DE_HASH
+   &kp TAB   &lh_pht LALT DE_A &lh_pht LGUI DE_R &lh_pht LCTRL DE_S   &lh_pht LSHIFT DE_T  &kp DE_G             &kp DE_M      &rh_pht RSHIFT DE_N   &rh_pht RCTRL DE_E     &rh_pht RGUI DE_I &rh_pht LALT DE_O &kp DE_HASH
    &none     &kp DE_Z          &kp DE_X          &kp DE_C             &kp DE_D             &kp DE_V             &kp DE_K      &kp DE_H              &kp DE_COMM            &kp DE_DOT        &kp DE_MINS       &none
                                                  &kp BSPC             &lt 1 SPACE          &to 1                &sk RCTRL     &kp SPACE             &lt 2 RET
                         >;      
@@ -91,10 +91,10 @@
                 
                 layer_2 {
                         bindings = <
-   &none       &kp N1   &kp N2  &kp N3   &kp N4            &kp N5                   &kp N6    &kp N7              &kp N8                 &kp N9    &kp N0              &kp HOME
-   &none       &kp F1   &kp F2  &kp F3   &lh_pht LCTRL F4  &lh_pht LSHIFT F5        &kp F6    &rh_pht RSHFT LEFT  &rh_pht RCTRL DOWN     &kp UP    &rh_pht LALT RIGHT  &none
-   &none       &kp F7   &kp F8  &kp F9   &kp F10           &kp F11                  &kp F12   &kp HOME            &kp PG_DN              &kp PG_UP &kp END             &kp END 
-                                &trans   &trans            &trans                   &to 0     &trans              &trans
+   &none       &kp N1            &kp N2  &kp N3           &kp N4            &kp N5                   &kp N6    &kp N7              &kp N8                 &kp N9    &kp N0              &kp HOME
+   &none       &lh_pht LALT F1   &kp F2  &lh_pht LCTRL F3 &lh_pht LSHIFT F4 &kp F5                   &kp F6    &rh_pht RSHFT LEFT  &rh_pht RCTRL DOWN     &kp UP    &rh_pht LALT RIGHT  &none
+   &none       &kp F7            &kp F8  &kp F9           &kp F10           &kp F11                  &kp F12   &kp HOME            &kp PG_DN              &kp PG_UP &kp END             &kp END 
+                                         &trans           &trans            &trans                   &to 0     &trans              &trans
                         >;
                 };
 
