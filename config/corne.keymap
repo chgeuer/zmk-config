@@ -39,15 +39,21 @@
 
                 combo_layer_1 { timeout-ms = <50>; key-positions = < 4  5>; bindings = <&to 1>; };
                 combo_layer_2 { timeout-ms = <50>; key-positions = <16 17>; bindings = <&to 2>; };
-                combo_layer_3 { timeout-ms = <50>; key-positions = <28 29>; bindings = <&to 3>; };
+                combo_layer_3 { timeout-ms = <50>; key-positions = <28 29>; bindings = <&to 3>; }; 
 
-                combo_de_ae { timeout-ms = <50>; key-positions = < 6  7>; bindings = <&kp DE_AE>; layers = <0>; };
-                combo_de_oe { timeout-ms = <50>; key-positions = <18 19>; bindings = <&kp DE_OE>; layers = <0>; };
-                combo_de_ue { timeout-ms = <50>; key-positions = <30 31>; bindings = <&kp DE_UE>; layers = <0>; };
-                combo_de_ss { timeout-ms = <50>; key-positions = < 7  8>; bindings = <&kp DE_SS>; layers = <0>; };
+                combo_de_ae   { timeout-ms = <50>; key-positions = < 6  7>; bindings = <&kp DE_AE>;   layers = <0>; };
+                combo_de_oe   { timeout-ms = <50>; key-positions = <18 19>; bindings = <&kp DE_OE>;   layers = <0>; };
+                combo_de_ss   { timeout-ms = <50>; key-positions = < 7  8>; bindings = <&kp DE_SS>;   layers = <0>; };
+                combo_de_ue   { timeout-ms = <50>; key-positions = <30 31>; bindings = <&kp DE_UE>;   layers = <0>; };
+                combo_de_acut { timeout-ms = <50>; key-positions = <23 35>; bindings = <&kp DE_ACUT>; layers = <1>; };
 
                 combo_page_up { timeout-ms = <50>; key-positions = <11 23>; bindings = <&kp PG_UP>; layers = <2>; };
                 combo_page_dn { timeout-ms = <50>; key-positions = <23 35>; bindings = <&kp PG_DN>; layers = <2>; };                
+        };
+
+        conditional_layers {
+                compatible = "zmk,conditional-layers";
+                tri_layer { if-layers = <1 2>; then-layer = <3>; };
         };
 
         // https://zmk.dev/docs/behaviors/hold-tap
@@ -81,16 +87,16 @@
    &kp ESC   &kp DE_Q          &kp DE_W          &kp DE_F             &kp DE_P             &kp DE_B             &kp DE_J      &kp DE_L              &kp DE_U               &kp DE_Y          &kp DE_SS         &kp DE_PLUS
    &kp TAB   &lh_pht LALT DE_A &lh_pht LGUI DE_R &lh_pht LCTRL DE_S   &lh_pht LSHIFT DE_T  &kp DE_G             &kp DE_M      &rh_pht RSHIFT DE_N   &rh_pht RCTRL DE_E     &rh_pht RGUI DE_I &rh_pht LALT DE_O &kp DE_HASH
    &none     &kp DE_Z          &kp DE_X          &kp DE_C             &kp DE_D             &kp DE_V             &kp DE_K      &kp DE_H              &kp DE_COMM            &kp DE_DOT        &kp DE_MINS       &none
-                                                 &kp BSPC             &lt 1 SPACE          &to 1                &sk RCTRL     &kp SPACE             &lt 2 RET
+                                                 &kp BSPC             &lt 1 SPACE          &none                &kp DEL       &kp SPACE             &lt 2 RET
                         >;      
                 };
- 
+
                 layer_1 {
                         bindings = <
    &kp DE_CIRC &kp DE_EXLM  &kp DE_DQUO  &kp DE_DLR   &kp DE_AMPR  &kp DE_PERC    &none    &kp DE_LPRN   &kp DE_RPRN     &kp DE_MINS &kp DE_EQL   &kp DE_BSLS  
    &kp DE_PIPE &kp DE_AT    &kp DE_TILD  &kp DE_EURO  &none        &none          &none    &kp DE_LCBR   &kp DE_RCBR     &kp DE_LBRC &kp DE_RBRC  &kp DE_QUOT
    &none       &none        &none        &none        &none        &none          &none    &kp DE_LABK   &kp DE_RABK     &kp DE_COLN &kp DE_SLSH  &kp DE_GRV
-                          	         &trans       &to 3        &to 2         &to 0    &trans        &trans
+                          	         &trans       &trans       &none          &none    &trans        &trans
                         >;
                 };
                 
@@ -99,7 +105,7 @@
    &none       &kp N1            &kp N2  &kp N3           &kp N4            &kp N5                   &kp N6    &kp N7              &kp N8                 &kp N9    &kp N0              &kp HOME
    &none       &lh_pht LALT F1   &kp F2  &lh_pht LCTRL F3 &lh_pht LSHIFT F4 &kp F5                   &kp F6    &rh_pht RSHFT LEFT  &rh_pht RCTRL DOWN     &kp UP    &rh_pht LALT RIGHT  &none
    &none       &kp F7            &kp F8  &kp F9           &kp F10           &kp F11                  &kp F12   &kp HOME            &kp PG_DN              &kp PG_UP &kp END             &kp END 
-                                         &trans           &trans            &trans                   &to 0     &trans              &trans
+                                         &trans           &trans            &none                    &none     &trans              &trans
                         >;
                 };
 
@@ -108,7 +114,7 @@
    &out OUT_BLE     &bt BT0      &bt BT3       &none    &none    &none              &none   &kp C_VOLUME_UP    &kp C_PREVIOUS     &kp C_NEXT   &none      &none 
    &out OUT_USB     &bt BT1      &bt BT4       &none    &none    &none              &none   &kp C_VOLUME_DOWN  &kp C_PLAY_PAUSE   &none        &none      &none 
    &none            &bt BT2      &bt BT_CLR    &none    &none    &none              &none   &none              &none              &none        &none      &none 
-                                               &trans   &trans   &trans             &to 0   &trans             &trans
+                                               &trans   &trans   &none              &none   &trans             &trans
                         >;
                 };
         };
