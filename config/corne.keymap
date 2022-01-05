@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/bt.h>
-// #include <dt-bindings/zmk/mouse.h>
+//#include <dt-bindings/zmk/mouse.h>
 #include "german-keymap.h"
 
 #define DEFAULT 0
@@ -46,13 +46,21 @@
                 // combo_layer_1 { timeout-ms = <COMBO_TIMEOUT>; key-positions = < 4  5>; bindings = <&to LOWER>;                       };
                 // combo_layer_2 { timeout-ms = <COMBO_TIMEOUT>; key-positions = <16 17>; bindings = <&to RAISE>;                       };
                 // combo_layer_3 { timeout-ms = <COMBO_TIMEOUT>; key-positions = <28 29>; bindings = <&to ADJUST>;                      }; 
-                combo_de_ae   { timeout-ms = <COMBO_TIMEOUT>; key-positions = < 6  7>; bindings = <&kp DE_AE>;   layers = <DEFAULT>; };
-                combo_de_oe   { timeout-ms = <COMBO_TIMEOUT>; key-positions = <18 19>; bindings = <&kp DE_OE>;   layers = <DEFAULT>; };
-                combo_de_ss   { timeout-ms = <COMBO_TIMEOUT>; key-positions = < 7  8>; bindings = <&kp DE_SS>;   layers = <DEFAULT>; };
-                combo_de_ue   { timeout-ms = <COMBO_TIMEOUT>; key-positions = <30 31>; bindings = <&kp DE_UE>;   layers = <DEFAULT>; };
-                combo_de_acut { timeout-ms = <COMBO_TIMEOUT>; key-positions = <23 35>; bindings = <&kp DE_ACUT>; layers = <LOWER>;   };
-                combo_page_up { timeout-ms = <COMBO_TIMEOUT>; key-positions = <11 23>; bindings = <&kp PG_UP>;   layers = <RAISE>;   };
-                combo_page_dn { timeout-ms = <COMBO_TIMEOUT>; key-positions = <23 35>; bindings = <&kp PG_DN>;   layers = <RAISE>;   };                
+
+                combo_de_ae   { timeout-ms = <COMBO_TIMEOUT>; key-positions = < 6  7>; bindings = <&kp DE_AE>;      layers = <DEFAULT>; };
+                combo_de_oe   { timeout-ms = <COMBO_TIMEOUT>; key-positions = <18 19>; bindings = <&kp DE_OE>;      layers = <DEFAULT>; };
+                combo_de_ss   { timeout-ms = <COMBO_TIMEOUT>; key-positions = < 7  8>; bindings = <&kp DE_SS>;      layers = <DEFAULT>; };
+                combo_de_ue   { timeout-ms = <COMBO_TIMEOUT>; key-positions = <30 31>; bindings = <&kp DE_UE>;      layers = <DEFAULT>; };
+                combo_de_acut { timeout-ms = <COMBO_TIMEOUT>; key-positions = <23 35>; bindings = <&kp DE_ACUT>;    layers = <LOWER>;   };
+
+                combo_page_up { timeout-ms = <COMBO_TIMEOUT>; key-positions = <11 23>; bindings = <&kp PG_UP>;      layers = <RAISE>;   };
+                combo_page_dn { timeout-ms = <COMBO_TIMEOUT>; key-positions = <23 35>; bindings = <&kp PG_DN>;      layers = <RAISE>;   };
+
+                combo_bt_0    { timeout-ms = <COMBO_TIMEOUT>; key-positions = < 0  1>; bindings = <&bt BT_SEL 0>;   layers = <DEFAULT>; };
+                combo_bt_1    { timeout-ms = <COMBO_TIMEOUT>; key-positions = < 1  2>; bindings = <&bt BT_SEL 1>;   layers = <DEFAULT>; };
+                combo_bt_2    { timeout-ms = <COMBO_TIMEOUT>; key-positions = < 2  3>; bindings = <&bt BT_SEL 2>;   layers = <DEFAULT>; };
+                combo_bt_3    { timeout-ms = <COMBO_TIMEOUT>; key-positions = < 3  4>; bindings = <&bt BT_SEL 3>;   layers = <DEFAULT>; };
+                combo_bt_4    { timeout-ms = <COMBO_TIMEOUT>; key-positions = < 4  5>; bindings = <&bt BT_SEL 4>;   layers = <DEFAULT>; };                
         };
 
         behaviors {
@@ -96,9 +104,9 @@
                 
                 layer_RAISE {
                         bindings = <
-   &none       &kp N1            &kp N2  &kp N3           &kp N4            &kp N5                   &kp N6    &kp N7              &kp N8                 &kp N9    &kp N0              &kp HOME
-   &none       &lh_pht LALT F1   &kp F2  &lh_pht LCTRL F3 &lh_pht LSHIFT F4 &kp F5                   &kp F6    &rh_pht RSHFT LEFT  &rh_pht RCTRL DOWN     &kp UP    &rh_pht LALT RIGHT  &none
-   &none       &kp F7            &kp F8  &kp F9           &kp F10           &kp F11                  &kp F12   &kp HOME            &kp PG_DN              &kp PG_UP &kp END             &kp END 
+   &none       &kp N1            &kp N2  &kp N3           &kp N4            &kp N5                   &kp N6    &kp N7              &kp N8                 &kp N9       &kp N0              &kp HOME
+   &none       &lh_pht LALT F1   &kp F2  &lh_pht LCTRL F3 &lh_pht LSHIFT F4 &kp F5                   &kp F6    &rh_pht RSHFT LEFT  &rh_pht RCTRL DOWN     &kp UP       &rh_pht LALT RIGHT  &none
+   &none       &kp F7            &kp F8  &kp F9           &kp F10           &kp F11                  &kp F12   &none               &none                  &none        &none               &kp END 
                                          &trans           &trans            &trans                   &trans    &trans              &trans
                         >;
                 };
